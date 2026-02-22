@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonorización Literaria | Preventa</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Sonorización Literaria</h1>
+        <p class="description">Transformando literatura en otro tipo de arte.</p>
+
+        {% if message %}<div class="message msg-success">{{ message }}</div>{% endif %}
+        {% if error %}<div class="message msg-error">{{ error }}</div>{% endif %}
+
+        <form action="/registro" method="post" class="form-group">
+            <input type="text" name="nombre" placeholder="Nombre completo" required class="input-field">
+            
+            <div class="row">
+                <input type="number" name="edad" placeholder="Edad" required class="input-field" style="flex: 1;">
+                <input type="email" name="email" placeholder="tu@correo.com" required class="input-field" style="flex: 2;">
+            </div>
+
+            <button type="submit" class="btn-submit">Registrarme en la preventa</button>
+        </form>
+    </div>
+
+</body>
+</html>
